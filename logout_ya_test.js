@@ -4,7 +4,7 @@ Scenario.only('StepOfRegistration', async ({ I }) => {
     I.amOnPage('https://yandex.by');
     I.see('Войти в почту');
     I.click('//span[text()=\'Войти в почту\']');
-    I.click('[for="passp-field-login"]');
+   // I.click('[for="passp-field-login"]');
     I.wait(2);
     I.fillField('#passp-field-login','AutotestLogin');
     I.click('[type="submit"]');
