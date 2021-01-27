@@ -1,6 +1,6 @@
 Feature('Navigation');
 
-Scenario.only('Navigation', ({ I }) => {
+Scenario('Navigation', ({ I }) => {
     I.amOnPage('https://yandex.by');
     I.click('[class="home-link i-bem dropdown2__switcher home-link_black_yes"]');
     I.wait(1);

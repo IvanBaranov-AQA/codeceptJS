@@ -5,7 +5,7 @@ const { setHeadlessWhen } = require('@codeceptjs/configure');
 setHeadlessWhen(process.env.HEADLESS);
 
 exports.config = {
-  tests: '*_test.js',
+  tests: 'tests/yandex/*_test.js',
   output: './output',
   helpers: {
     Playwright: {
@@ -15,7 +15,11 @@ exports.config = {
     }
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    homePage: './pages/homePage.js',
+    loginPage: './pages/loginPage.js',
+    mailHomePage: './pages/mailHomePage.js',
+    locationPage: './pages/locationPage.js'
   },
   bootstrap: null,
   mocha: {},
@@ -26,7 +30,7 @@ exports.config = {
       enabled: true
     },
     tryTo: {
-      enabled: true
+      enabled: false
     },
     screenshotOnFail: {
       enabled: true

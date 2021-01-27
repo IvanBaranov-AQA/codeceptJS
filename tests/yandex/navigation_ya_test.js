@@ -1,6 +1,6 @@
 Feature('Navigation');
 
-Scenario.only('Navigation', ({ I }) => {
+Scenario('StepNavigation', ({ I }) => {
     I.amOnPage('https://yandex.by');
     I.click('[data-id=\'video\']');
     I.wait(1);
