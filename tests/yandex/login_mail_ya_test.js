@@ -1,11 +1,10 @@
 Feature('LoginEmail');
 
-Scenario('Login', async ({ I, homePage, loginPage, mailHomePage }) => {
-    I.amOnPage(homePage.urls.homePage);
-    I.see('Войти в почту');
-    I.click(homePage.buttons.enterInMail);
-    I.switchToNextTab();
-    loginPage.sendForm('AutotestLogin','autotestPassword123');
-    I.waitForVisible(mailHomePage.userInit,10);
-    I.see('AutotestLogin',mailHomePage.userInit);
+Scenario.skip('Login', async ({ I, homePage, loginPage, mailHomePage }) => {
+    await I.amOnPage(homePage.urls.homePage);
+    await I.see('Войти в почту');
+    await I.click(homePage.buttons.enterInMail);
+    await I.switchToNextTab();
+    await loginPage.sendForm('AutotestLogin','autotestPassword123');
+    await I.see('AutotestLogin', mailHomePage.userButton);
 });

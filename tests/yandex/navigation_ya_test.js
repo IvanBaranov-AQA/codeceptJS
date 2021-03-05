@@ -1,18 +1,8 @@
 Feature('Navigation');
 
-Scenario('StepNavigation', ({ I }) => {
-    I.amOnPage('https://yandex.by');
-    I.click('[data-id=\'video\']');
-    I.wait(1);
-    I.click('[data-id=\'images\']');
-    I.wait(1);
-    I.click('[data-id=\'news\']');
-    I.wait(1);
-    I.click('[data-id=\'maps\']');
-    I.wait(1);
-    I.click('[data-id=\'market\']');
-    I.wait(1);
-    I.click('[data-id=\'music\']');
-    I.wait(3);
+Scenario.skip('StepNavigation', ({ homePage }) => {
+    const data = ['video', 'images', 'news', 'maps', 'market', 'translate', 'tv', 'music', 'tvonline'];
+    for(let i = 0; i < data.length; i++) {
+        homePage.followDataLink(data[i])
+    }
 });
-//const data = ['video', 'images', 'news', 'maps', 'market', 'music'];

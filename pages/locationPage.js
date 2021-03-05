@@ -7,13 +7,21 @@ module.exports = {
         location: '.input__control',
     },
 
-    submitButton: '.b-autocomplete-item__reg',
+    submitButton: '[class="popup__items input__popup-items"]',
+    checkAuto: '[class="checkbox__control"]',
+    list: '//ul[@class="popup__items input__popup-items"]/child::li/div',
+
+
+
 // introducing methods
-    sendForm(location) {
+    setLocation(location) {
         I.fillField(this.fields.location, location);
-        I.click(this.submitButton);
+        I.click(this.location(location));
         return location;
     },
 
-   // let loc = sendForm();
+
+
+    location: (text) => `//div[text()="${text}"]`,
+
 };

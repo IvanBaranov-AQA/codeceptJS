@@ -1,6 +1,6 @@
 Feature('Registration');
 
-Scenario('StepOfRegistration', async ({ I }) => {
+Scenario.skip('StepOfRegistration', async ({ I }) => {
     I.amOnPage('https://yandex.ru/news/?utm_source=main_stripe_big');
     I.see('Москва');
     I.seeElement('span.service__name');

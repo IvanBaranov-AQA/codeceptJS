@@ -1,10 +1,13 @@
 {
-    "name": "codeceptjs-tests",
+    "name": "yarn",
     "version": "0.1.0",
     "private": true,
     "scripts": {
+        "codeceptjsWithAllureAndGrep": "codeceptjs run --steps --plugins allure --grep @Smoke",
+        "codeceptjsWithAllure": "codeceptjs run --steps --plugins allure",
         "codeceptjs": "codeceptjs run --steps",
         "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
+        "allure": "allure serve output",
         "codeceptjs:ui": "codecept-ui --app",
         "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples",
         "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples",
@@ -16,7 +19,22 @@
         "@codeceptjs/examples": "^1.2.1",
         "@codeceptjs/ui": "^0.4.3",
         "codeceptjs": "^3.0.4",
-        "jest": "^26.6.3",
-        "playwright": "^1.8.0"
-    }
+        "jest": "^26.6.3"
+    },
+    "dependencies": {
+        "allure-js-commons": "^2.0.0-beta.9",
+        "assert": "^2.0.0",
+        "expect": "latest",
+        "fetch": "^1.1.0",
+        "lodash": "^4.17.20",
+        "node-fetch": "^2.6.1",
+        "promise": "^8.1.0",
+        "puppeteer": "4.0.1",
+        "unirest": "^0.6.0",
+        "whatwg-fetch": "^3.5.0"
+    },
+    "main": "index.js",
+    "repository": "https://github.com/IvanBaranov-AQA/codeceptJS.git",
+    "author": "IvanBaranov-QA <ivan.baranov.1709@gmail.com>",
+    "license": "MIT"
 }

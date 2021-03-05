@@ -1,21 +1,16 @@
+const assert = require('assert'); // или это
+const expect = require('expect'); // или то
 Feature('ChangeLocation');
-
 Scenario('ChangeLocation', async ({ I, homePage, locationPage }) => {
     I.amOnPage(homePage.urls.homePage);
     I.click(homePage.buttons.geolink);
-    let location = locationPage.sendForm('Лондон');
-    I.see(location);
-    I.click(homePage.buttons.more);
-    I.click(homePage.buttons.closeMore);
-
+    I.click(locationPage.checkAuto);
+    homePage.checkLocation('Лондон');
+    const moreForTown1 = await homePage.sendMoreForCity();
     I.click(homePage.buttons.geolink);
-    location = locationPage.sendForm('Париж');
-    I.see(location);
-    I.click(homePage.buttons.more);
-    I.wait(2);
-    I.click(homePage.buttons.closeMore);
-
-//добавить сравнение
-
+    homePage.checkLocation('Париж');
+    const moreForTown2 = await homePage.sendMoreForCity();
+    expect(moreForTown1).toEqual(moreForTown2); // или это
+    assert.strictEqual(moreForTown1, moreForTown2); // или то
 });
 

@@ -1,6 +1,6 @@
 Feature('LoginNoValidLogin');
 
-Scenario.only('LoginNoValidLogin', async ({ I, homePage, loginPage}) => {
+Scenario('LoginNoValidLogin', async ({ I, homePage, loginPage}) => {
     I.amOnPage(homePage.urls.homePage);
     I.click(homePage.buttons.enterInMail);
     I.switchToNextTab();
